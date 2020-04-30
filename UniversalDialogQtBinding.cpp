@@ -37,14 +37,14 @@ enum class DialogResult
 
 extern "C"
 {
-    DialogResult ShowDialog(char *caption, char *text, DialogButton button, DialogIcon icon);
+    DialogResult ShowMessageDialog(char *caption, char *text, DialogButton button, DialogIcon icon);
 }
 
 //Constructs a QApplication to make QMessageBox useable.
 static int argc = 0;
 static QApplication app(argc, nullptr);
 
-DialogResult ShowDialog(char *caption, char *text, DialogButton button, DialogIcon icon)
+DialogResult ShowMessageDialog(char *caption, char *text, DialogButton button, DialogIcon icon)
 {
     QMessageBox msgBox;
     msgBox.setText(QString(text));
