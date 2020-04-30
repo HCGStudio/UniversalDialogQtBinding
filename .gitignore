@@ -14,3 +14,5 @@ _deps
 DartConfiguration.tcl
 CPackSourceConfig.cmake
 CPackConfig.cmake
+*.so
+UniversalDialogQtBinding_autogen/
