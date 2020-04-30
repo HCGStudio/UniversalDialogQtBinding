@@ -40,11 +40,12 @@ extern "C"
     DialogResult ShowDialog(char *caption, char *text, DialogButton button, DialogIcon icon);
 }
 
+//Constructs a QApplication to make QMessageBox useable.
+static int argc = 0;
+static QApplication app(argc, nullptr);
+
 DialogResult ShowDialog(char *caption, char *text, DialogButton button, DialogIcon icon)
 {
-    //Constructs a QApplication to make QMessageBox useable.
-    int argc = 0;
-    QApplication app(argc, nullptr);
     QMessageBox msgBox;
     msgBox.setText(QString(text));
     msgBox.setInformativeText(QString(caption));
