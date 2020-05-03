@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Get pre-requirments
-      run: brew install qt
+      run: brew install qt ninja
     - name: make script executable
       run: chmod +x ./scripts/build.sh
     - name: build
