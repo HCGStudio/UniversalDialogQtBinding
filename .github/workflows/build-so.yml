@@ -12,5 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: make script executable
+      run: chmod +x ./scripts/build.sh
     - name: build
       run: ./scripts/build.sh
