@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Get pre-requirments
-      run: sudo apt install ninja
+      run: sudo apt install ninja-build
     - name: make script executable
       run: chmod +x ./scripts/build.sh
     - name: build
