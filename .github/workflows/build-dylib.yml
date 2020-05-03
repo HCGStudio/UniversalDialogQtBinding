@@ -1,0 +1,19 @@
+name: Build mac shared library
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Get pre-requirments
+      run: brew install qt
+    - name: make script executable
+      run: chmod +x ./scripts/build.sh
+    - name: build
+      run: ./scripts/build.sh
