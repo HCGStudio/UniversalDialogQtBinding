@@ -1,0 +1,25 @@
+name: Build linux shared library
+
+on:
+  create:
+    tags: 
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Get pre-requirments
+      run: sudo apt install ninja-build qtbase5-dev
+    - name: make script executable
+      run: chmod +x ./scripts/build.sh
+    - name: build
+      run: ./scripts/build.sh
+    - name: Action Release
+      uses: yakuhzi/action-release@v1.2.0
+      with:
+        # File to upload to the release
+        file: build/libUniversalDialogQtBinding.so
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
