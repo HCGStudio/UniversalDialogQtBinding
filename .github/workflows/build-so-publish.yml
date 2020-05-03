@@ -1,4 +1,4 @@
-name: Build linux shared library
+name: Build and publish linux shared library
 
 on:
   create:
