@@ -13,9 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: get pre-requirments
       run: brew install qt ninja
-    - name: add qt to path
-      run: echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> ~/.bash_profile
     - name: make script executable
-      run: chmod +x ./scripts/build.sh
+      run: chmod +x ./scripts/build-mac-ci.sh
     - name: build
-      run: ./scripts/build.sh
+      run: ./scripts/build-mac-ci.sh
